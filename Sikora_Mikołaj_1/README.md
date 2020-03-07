@@ -1,5 +1,5 @@
-#ZADANIE 1 - TCP/UDP
-##Treść
+# ZADANIE 1 - TCP/UDP
+## Treść
 
  1. **Napisać aplikację typu chat** (5 pkt.) 
     * Klienci łączą się serwerem przez protokół TCP 
@@ -12,7 +12,7 @@
  3. **Zaimplementować powyższy punkt w wersji multicast** (2 pkt.) 
     * Nie zamiast, tylko jako alternatywna opcja do wyboru (komenda ‘M’) 
     * Multicast przesyła bezpośrednio do wszystkich przez adres grupowy (serwer może, ale nie musi odbierać)
-##Instrukcje
+## Instrukcje
 Aby uruchomić program, należy najpierw uruchomić serwer (*Server*), a następnie od 1 do 10 klientów (*Client*). 
 <br>
 W programie klienta jako pierwsze wpisujemy jego nick. Następnie możemy wysyłać wiadomości (domyślnie TCP).
@@ -23,5 +23,5 @@ zawartości pliku tekstowego (Ascii artu) o nazwie *filename* (znajdującego si�
 <br>
 Maksymalną liczbę klientów można zmienić poprzez edycję atrybutu Servera *maxNumberOfClients*, natomiast ścieżkę do folderu *Ascii Arts* poprzez edycję atrybutu Clienta *asciiDirPath*.
 
-##Autor
+## Autor
 *Mikołaj Sikora*
