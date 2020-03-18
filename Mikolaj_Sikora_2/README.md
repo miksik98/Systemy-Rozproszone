@@ -36,6 +36,6 @@ pomiaru jakości powietrza i wypisuje:
 
 Powyższe dane aplikacja pobiera z serwisu http://api.gios.gov.pl.
 Aby skorzystać z aplikacji należy wcześniej skonfigurować i uruchomić serwer GlassFish (najlepiej w wersji 5.0.1).
-Następnie na stronie http://localhost:*numer_portu*/Mikolaj_Sikora_2_war_exploded/index.html powinien być dostępny odpowiedni formularz.
+Następnie na stronie http://localhost:numer_portu/Mikolaj_Sikora_2_war_exploded/index.html powinien być dostępny odpowiedni formularz.
 ## Autor
 *Mikołaj Sikora*
