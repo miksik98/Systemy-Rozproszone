@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "a1f40af8-1a86-4c04-8ccf-0ad958bacc1f",
+		"name": "Mikolaj_Sikora_2",
+		"description": "Systemy Rozproszone - Zadanie 2 (REST API)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET address",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://geocode.xyz/50.068080,19.912628?geoit=json",
+					"protocol": "http",
+					"host": [
+						"geocode",
+						"xyz"
+					],
+					"path": [
+						"50.068080,19.912628"
+					],
+					"query": [
+						{
+							"key": "geoit",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all stations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.gios.gov.pl/pjp-api/rest/station/findAll",
+					"protocol": "http",
+					"host": [
+						"api",
+						"gios",
+						"gov",
+						"pl"
+					],
+					"path": [
+						"pjp-api",
+						"rest",
+						"station",
+						"findAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET sensors of closest station",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.gios.gov.pl/pjp-api/rest/station/sensors/14",
+					"protocol": "http",
+					"host": [
+						"api",
+						"gios",
+						"gov",
+						"pl"
+					],
+					"path": [
+						"pjp-api",
+						"rest",
+						"station",
+						"sensors",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET sensor data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.gios.gov.pl/pjp-api/rest/data/getData/92",
+					"protocol": "http",
+					"host": [
+						"api",
+						"gios",
+						"gov",
+						"pl"
+					],
+					"path": [
+						"pjp-api",
+						"rest",
+						"data",
+						"getData",
+						"92"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET station index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/52",
+					"protocol": "http",
+					"host": [
+						"api",
+						"gios",
+						"gov",
+						"pl"
+					],
+					"path": [
+						"pjp-api",
+						"rest",
+						"aqindex",
+						"getIndex",
+						"52"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST on my server",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8088/Mikolaj_Sikora_2_war_exploded/rest/server?latitude=50.068080&longitude=19.912628",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"Mikolaj_Sikora_2_war_exploded",
+						"rest",
+						"server"
+					],
+					"query": [
+						{
+							"key": "latitude",
+							"value": "50.068080"
+						},
+						{
+							"key": "longitude",
+							"value": "19.912628"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
