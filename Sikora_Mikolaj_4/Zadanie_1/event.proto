@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "gen.event";
+option java_outer_classname = "EventProto";
+
+package event;
+
+enum EventType {
+    MEETING = 0;
+    LECTURE = 1;
+    MATCH = 2;
+    CONCERT = 3;
+}
+
+enum City {
+    CRACOW = 0;
+    WARSAW = 1;
+    POZNAN = 2;
+    WROCLAW = 3;
+}
+
+message Subscription {
+    EventType event = 1;
+    repeated City cities = 2;
+}
+
+message Notification {
+    message Person {
+        string name = 1;
+        string role = 2;
+    }
+    EventType event = 1;
+    string description = 2;
+    repeated Person organizers = 3;
+    City city = 4;
+}
+
+service EventNotify {
+    rpc GetInterestingEvents(Subscription) returns (stream Notification);
+}
+
