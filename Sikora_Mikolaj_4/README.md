@@ -2,7 +2,7 @@
 
 Zadanie składa się z dwóch części.
 
-##Zadanie 4.1
+## Zadanie 4.1
 
 Wynikiem prac ma być aplikacja klient-serwer, w której komunikacja rozproszona jest zrealizowana z wykorzystaniem 
 technologii gRPC. Klient powinien dokonywać subskrypcji na zdarzenia. To, o czym mają one informować, jest w gestii 
@@ -21,7 +21,7 @@ odporność komunikacji na błędy sieciowe (które można symulować czasowym w
 włączeniem firewalla). Ustanie przerwy w łączności sieciowej musi pozwolić na ponowne ustanowienie komunikacji bez
 konieczności restartu procesu. Rozwiązanie musi być także "PAT-friendly".
 
-##Zadanie 4.2
+## Zadanie 4.2
 
 Wynikiem prac ma być aplikacja klient-serwer, w której komunikacja rozproszona jest realizowana w technologii ICE 
 albo Thfitt (do wyboru). Aplikacja ma pozwalać na sterowanie urządzeniami tzw. inteligentnego domu, na którego 
