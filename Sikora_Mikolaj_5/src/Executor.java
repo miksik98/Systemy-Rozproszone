@@ -14,15 +14,15 @@ public class Executor implements Watcher, Runnable, DataMonitor.DataMonitorListe
 
     ZooKeeper zk;
 
-    String execName;
+    String execPath;
 
     Process process;
 
     String znode;
 
     public Executor(String hostPort, String znode,
-                    String execName) throws IOException, InterruptedException {
-        this.execName = execName;
+                    String execPath) throws IOException, InterruptedException {
+        this.execPath = execPath;
         this.znode = znode;
         zk = new ZooKeeper(hostPort, 3000, this);
         dm = new DataMonitor(zk, znode, this);
@@ -80,7 +80,7 @@ public class Executor implements Watcher, Runnable, DataMonitor.DataMonitorListe
             }
         }else {
             try {
-                process = new ProcessBuilder(execName).start();
+                process = new ProcessBuilder(execPath).start();
                 try {
                     zk.getChildren(znode, this);
                 } catch (KeeperException | InterruptedException e) {

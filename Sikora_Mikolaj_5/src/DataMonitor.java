@@ -20,6 +20,8 @@ public class DataMonitor implements Watcher, StatCallback {
 
     DataMonitorListener listener;
 
+    long numberOfDescendants;
+
     Thread listSubtree = new Thread(()->{
         Scanner scanner = new Scanner(System.in);
         while(true) {
@@ -56,6 +58,7 @@ public class DataMonitor implements Watcher, StatCallback {
         this.znode = znode;
         this.listener = listener;
         this.listSubtree.start();
+        this.numberOfDescendants = -1;
         zooKeeper.exists(znode, true, this, null);
     }
 
@@ -78,7 +81,11 @@ public class DataMonitor implements Watcher, StatCallback {
         } else {
             if(event.getType() == Event.EventType.NodeChildrenChanged){
                 try {
-                    System.out.println("Number of descendants: "+countDescendants());
+                    long newNumberOfDescendants = countDescendants();
+                    if(newNumberOfDescendants > numberOfDescendants) {
+                        System.out.println("Number of descendants: " + newNumberOfDescendants);
+                    }
+                    numberOfDescendants = newNumberOfDescendants;
                 } catch (KeeperException | InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -104,6 +111,11 @@ public class DataMonitor implements Watcher, StatCallback {
     public void processResult(int rc, String path, Object ctx, Stat stat) {
         switch (get(rc)) {
             case OK:
+                try {
+                    numberOfDescendants = countDescendants();
+                } catch (KeeperException | InterruptedException e) {
+                    e.printStackTrace();
+                }
                 listener.exists(false);
                 break;
             case NONODE:
